@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https:unpkg.com/p5"></script>
+    <script src="sketch4.js"></script>
+
+
+    <meta charset="UTF-8">
+    <title>Damn Button</title>
+    <style>
+        div {
+            position: absolute;
+        }
+
+        button {
+            -webkit-appearance: none;
+            width: auto;
+            height: 60px;
+            background: rgb(0, 0, 0);
+            color: white;
+            font-size: 3em;
+            font-stretch: ultra-condensed;
+            font-weight: 40px;
+        border: 3px;
+        }
+
+        button:hover {
+  
+            background: white;
+            color: black;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <script>
+        var calls = ["collaboration", "co-creation","reaction", "comparison", "interactivity", "inclusivity", "interaction","collaboration", "reaction", "comparison", "co-creation","inclusivity", "co-creation","interactivity", "collaboration", "interaction", "co-creation"];
+
+        function reposition() {
+            var d = document.createElement("div");
+            d.id = "pack";
+            d.style.left = Math.random() * 800 + "px";
+            d.style.top = Math.random() * 400 + "px";
+            var b = document.createElement("button");
+            var p = parseInt(Math.random() * calls.length);
+            b.innerHTML = calls[p];
+            b.onclick = reposition;
+
+            d.appendChild(b);
+            document.body.appendChild(d);
+
+            if (document.body.querySelectorAll("#pack").length > 1) {
+                var del = document.body.querySelector("#pack");
+                document.body.removeChild(del);
+            }
+        }
+        reposition();
+    </script>
+
+
+    
+</body>
+</html>
