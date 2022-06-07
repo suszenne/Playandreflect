@@ -27,8 +27,8 @@ function draw() {
     } else {
         fill(2, 76, 104);
     }
-if(frameCount < 500){
-    image(im,random(1044), random(456), 100, 100);
+if(frameCount < 1500){
+    image(im,random(1044), random(456), 50, 50);
 }
     
 }
